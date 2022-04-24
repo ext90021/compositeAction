@@ -15,7 +15,9 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: cat ${{ inputs.tf_vars }}
+    - run: |
+        echo "Terraform vars"
+        cat ${{ inputs.tf_vars }}
       shell: bash
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
