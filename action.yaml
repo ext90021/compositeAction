@@ -24,6 +24,7 @@ runs:
       shell: bash
     - run: |
         echo "---\tf_hostname: blablavla" > tf_ansible.yaml
+      shell: bash
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
     - id: random-number-generator
