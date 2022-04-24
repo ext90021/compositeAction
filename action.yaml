@@ -5,6 +5,9 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
+  tf_vars:
+    description: "Terraform customer config"
+    required: true
 outputs:
   random-number:
     description: "Random number"
@@ -12,6 +15,8 @@ outputs:
 runs:
   using: "composite"
   steps:
+    - run: cat ${{ inputs.tf_vars }}
+      shell: bash
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
     - id: random-number-generator
