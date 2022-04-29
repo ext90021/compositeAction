@@ -24,7 +24,7 @@ runs:
       shell: bash
     - run: |
         pwd
-        terraform init
+        terraform -chdir=$GITHUB_WORKSPACE/infra init
       shell: bash
     - run: |
         echo "Terraform vars"
@@ -32,13 +32,4 @@ runs:
       shell: bash
     - run: |
         echo "---\ntf_hostname: blablavla" > tf_ansible.yaml
-      shell: bash
-    - run: echo Hello ${{ inputs.who-to-greet }}.
-      shell: bash
-    - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
-      shell: bash
-    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-      shell: bash          
-    - run: goodbye.sh
       shell: bash
