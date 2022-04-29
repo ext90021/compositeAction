@@ -20,6 +20,7 @@ runs:
   steps:
     - uses: hashicorp/setup-terraform@v2
     - run: terraform init
+      shell: bash
     - run: |
         echo "Terraform vars"
         cat ${{ inputs.tf_vars }}
