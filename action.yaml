@@ -1,17 +1,10 @@
-name: 'Hello World'
-description: 'Greet someone'
+name: 'TDV Provision'
+description: 'Provision TDV server'
 inputs:
-  who-to-greet:
-    description: 'Who to greet'
-    required: true
-    default: 'World'
   tf_vars:
     description: "Terraform customer config"
     required: true
 outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
   tf_ansible:
     description: "Terraforn Ansible config"
     value: tf_ansible.yaml
