@@ -12,12 +12,13 @@ runs:
   using: "composite"
   steps:
     - uses: hashicorp/setup-terraform@v2
-    - run: echo "Current path: $(pwd)"
-      shell: bash
-    - run: ls -al
+    - run: |
+        echo "Current path: $(pwd)"
       shell: bash
     - run: |
-        pwd
+        ls -al
+      shell: bash
+    - run: |
         terraform -chdir=$GITHUB_WORKSPACE/infra init
       shell: bash
     - run: |
