@@ -19,7 +19,7 @@ runs:
         terraform -chdir=$GITHUB_WORKSPACE/infra plan -out=$GITHUB_WORKSPACE/infra/plan.out
       shell: bash
     - run: |
-        cat $GITHUB_WORKSPACE/infra/plan.out
+        terraform -chdir=$GITHUB_WORKSPACE/infra apply $GITHUB_WORKSPACE/infra/plan.out
       shell: bash
     - run: |
         echo "---\ntf_hostname: blablavla" > tf_ansible.yaml
