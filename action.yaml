@@ -19,14 +19,16 @@ runs:
   using: "composite"
   steps:
     - uses: hashicorp/setup-terraform@v2
-    - run: terraform init
+    - run: |
+        pwd
+        terraform init
       shell: bash
     - run: |
         echo "Terraform vars"
         cat ${{ inputs.tf_vars }}
       shell: bash
     - run: |
-        echo "---\tf_hostname: blablavla" > tf_ansible.yaml
+        echo "---\ntf_hostname: blablavla" > tf_ansible.yaml
       shell: bash
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
