@@ -18,6 +18,8 @@ outputs:
 runs:
   using: "composite"
   steps:
+    - uses: hashicorp/setup-terraform@v2
+    - run: terraform init
     - run: |
         echo "Terraform vars"
         cat ${{ inputs.tf_vars }}
