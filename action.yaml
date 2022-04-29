@@ -20,6 +20,9 @@ runs:
   steps:
     - uses: hashicorp/setup-terraform@v2
     - run: |
+        echo "Current path: $(pwd)"
+      shell: bash
+    - run: |
         pwd
         terraform init
       shell: bash
