@@ -16,10 +16,10 @@ runs:
         echo "Current path: $(pwd)"
       shell: bash
     - run: |
-        ls -al
+        ls -al .github
       shell: bash
     - run: |
-        terraform -chdir=$GITHUB_WORKSPACE/infra init
+        terraform -chdir=$GITHUB_WORKSPACE/infra
       shell: bash
     - run: |
         echo "Terraform vars"
