@@ -13,13 +13,7 @@ runs:
   steps:
     - uses: hashicorp/setup-terraform@v2
     - run: |
-        echo "Current path: $(pwd)"
-      shell: bash
-    - run: |
-        ls -al .github/workflows
-      shell: bash
-    - run: |
-        terraform -chdir=$GITHUB_WORKSPACE init
+        terraform -chdir=$GITHUB_WORKSPACE/infra init
       shell: bash
     - run: |
         echo "Terraform vars"
